@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+        background: #19011d;
+    }
+
+    button{
+        position: relative;
+        padding: 15px 30px;
+        margin: 10px;
+        background: #27022d;
+        color: white;
+        text-decoration: none;
+        letter-spacing: 1px;
+        border: 1px solid #000;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    button:hover{
+        background: #a41ee9;
+    }
+
+    button:nth-child(2):hover{
+        background: #ff3c7f;
+    }
+
+    button::before{
+
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg,transparent,#fff,transparent);
+        transition: 0.5s;
+
+    }
+
+    button:hover::before{
+        left: 100%;
+    }
+
+    button:hover::after{
+        position: relative;
+        padding: 15px 30px;
+        margin: 10px;
+        background: #27022d;
+        color: #fff;
+        text-decoration: none;
+        letter-spacing:  1px;
+        border: 1px solid #000;
+        transition: 0.5s;
+        
+    }
+
+    button:hover{
+        background: #a41ee9;
+    }
+
+</style>
+
+<script>
+
+        x = 1;
+
+        function changeImage() {
+
+            
+
+            if(x==1) {
+
+                var img = document.getElementById('image');
+                img.src = 'img/1tain.png';
+                x++;
+
+                var text = "เป่าดี ๆ ครับคนสวย";
+                document.getElementById("text1").innerHTML=text;
+
+            }
+            else {
+
+                var img = document.getElementById('image');
+                img.src = 'img/nulltain.png';
+
+                var text = "HBD ค้าบบบ";
+                document.getElementById("text1").innerHTML=text;
+
+                var prg = "รู้ได้ไง ว่ากูจะให้ของพวกนี้ 😢 <br> คือถ้ามึงจะซิ่ว ก็มีกูที่พร้อมสนับสนุนมึงนะ <br> เภสัชเขาเรียนแคลเรียนฟิสิกส์ มันต้องใช้เยอะ <br> กูรู้มึงอาจจะมองว่าแปลก แต่กูหวังดี <br> แต่ถึงมึงไม่ซิ่วก็น่าจะต้องใช้อยู่ดีแหละ <br> สุดท้ายถึงมึงจะซิ่วหรือเรียนสาขานี้ต่อ มึงก็มีกูตลอด <br><br> Wish You the Best.";
+                document.getElementById("prg").innerHTML=prg;
+
+            }
+
+        }
+
+</script>
+
+<body>
+
+    <img src="img/full.png" width="70%" class="responsive" id='image'>
+    <button onclick="changeImage()"><a id="text1">คลิกเพื่อเป่าเค้ก</a></button>
+
+    <p style="color:white" align="center" id="prg">
+
+        
+
+    </p>
+    
+
+
+</body>
+</html>
